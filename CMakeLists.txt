@@ -38,3 +38,14 @@ FirstOrganizedCMakeConfig.cmake
 INSTALL_DESTINATION ${PROJECT_BINARY_DIR}
 )
 
+#-----------------------------------------------------
+#configure CPack
+if(WIN32)
+	set(CPACK_GENERATOR "ZIP")
+else()
+	set(CPACK_GENERATOR "TGZ")
+endif()
+
+#THis must be last
+include(CPack)
+
